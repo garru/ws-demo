@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Warbler
+    %link{:href => "/css/reset.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/stylesheet.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:type => "text/javascript", :src  => "javascripts/jquery-1.4.2.min.js"}
+    %script{:type => "text/javascript", :src  => "javascripts/color.js"}
+    %script{:type => "text/javascript", :src  => "javascripts/heatmap.js"}
+  %body
+    #header
+      %h1 Warbler
+    #body
+      =yield

@@ -11,6 +11,8 @@ begin
     gem.homepage = "http://github.com/garru/warbler"
     gem.authors = ["Gary Tsang"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "sinatra", ">= 1.0"
+    gem.add_development_dependency "haml", ">= 3.0.15"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

@@ -1,0 +1,27 @@
+:javascript
+  $(document).ready(function(){
+    var controller = new Heatmap.Controller('heatmap');
+    function debug(str){ $("#debug").append("<p>"+str+"</p>"); };
+
+    ws = new WebSocket("ws://localhost:8080/");
+    ws.onmessage = function(evt) { tick(evt)};
+    ws.onclose = function() { console.log("socket closed"); };
+    ws.onopen = function() {
+        console.log("connected...");
+        ws.send("hello server");
+    };
+
+
+    function tick(evt){
+      if(evt != undefined){
+        var data = JSON.parse(evt.data);
+        controller.tick(data);
+        controller.draw();
+      }
+    }
+    setInterval(tick, 500);
+  });
+
+.graph
+  %canvas#heatmap{:width => "600px", :height => "300px"}
+.debug
